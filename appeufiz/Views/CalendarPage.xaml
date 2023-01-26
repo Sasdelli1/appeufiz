@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="appeufiz.Views.CalendarPage"
+             xmlns:vm="clr-namespace:appeufiz.ViewModels"
+             xmlns:controls="clr-namespace:Xamarin.Plugin.Calendar.Controls;assembly=Xamarin.Plugin.Calendar"
+             BackgroundColor="#1A1A1A">
+    
+    <ContentPage.BindingContext>
+        <vm:CalendarViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Label TextColor="white" Text="Calendario" VerticalOptions="Start" HorizontalOptions="Center"/>
+        </StackLayout>
+    </ContentPage.Content>
+    
+    <controls:Calendar Padding="15,100,15,15"
+        VerticalOptions="Center"
+        YearLabelColor="#9BBB59"
+        MonthLabelColor="#9BBB59"
+        DeselectedDayTextColor="white"
+        SelectedDayTextColor="black"
+        SelectedDateTextFormat="ddd, dd MMM yyyy"
+        TodayTextColor="white"
+        TodayOutlineColor="#9BBB59"
+        SelectedTodayTextColor="white"
+        DaysTitleColor="white"
+        EventIndicatorSelectedColor="#9BBB59"
+        EventIndicatorColor="#9BBB59"
+        SelectedDateColor="#9BBB59"
+        SelectedDayBackgroundColor="white"
+        Culture="{Binding Culture}"
+        Events="{Binding Events}">
+        <controls:Calendar.EventTemplate>
+            <DataTemplate>
+                <StackLayout
+                Padding="15,0,0,0">
+                    <Label
+                    Text="{Binding Nome}"
+                    FontAttributes="Bold"
+                    FontSize="Medium" />
+                </StackLayout>
+            </DataTemplate>
+        </controls:Calendar.EventTemplate>
+    </controls:Calendar>
+
+
+</ContentPage>

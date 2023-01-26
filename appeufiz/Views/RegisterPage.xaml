@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             x:Class="appeufiz.Views.RegisterPage"
+             BackgroundColor="#1A1A1A">
+
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <StackLayout>
+                <Image Source="newuser_green.png" HeightRequest="60" WidthRequest="60" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,30,0,0"></Image>
+            </StackLayout>
+            <StackLayout Padding="20,130,20,0">
+                <pancake:PancakeView BackgroundColor="#333333" CornerRadius="50" HorizontalOptions="FillAndExpand" HeightRequest="50">
+                    <Entry Placeholder="nome" PlaceholderColor="darkgray" HorizontalTextAlignment="Center" TextColor="white"></Entry>
+                </pancake:PancakeView>
+                <pancake:PancakeView BackgroundColor="#333333" CornerRadius="50" HorizontalOptions="FillAndExpand" HeightRequest="50">
+                    <Entry Placeholder="usuario" PlaceholderColor="darkgray" HorizontalTextAlignment="Center" TextColor="white"></Entry>
+                </pancake:PancakeView>
+                <pancake:PancakeView BackgroundColor="#333333" CornerRadius="50" HorizontalOptions="FillAndExpand" HeightRequest="50">
+                    <Entry Placeholder="e-mail" PlaceholderColor="darkgray" HorizontalTextAlignment="Center" TextColor="white" Keyboard="Email"></Entry>
+                </pancake:PancakeView>
+                <pancake:PancakeView BackgroundColor="#333333" CornerRadius="50" HorizontalOptions="FillAndExpand" HeightRequest="50">
+                    <Entry Placeholder="telefone" PlaceholderColor="darkgray" HorizontalTextAlignment="Center" TextColor="white" Keyboard="Telephone" MaxLength="11"></Entry>
+                </pancake:PancakeView>
+                <pancake:PancakeView BackgroundColor="#333333" CornerRadius="50" HorizontalOptions="FillAndExpand" HeightRequest="50" Margin="0,50,0,0">
+                    <Entry Placeholder="senha" IsPassword="true" PlaceholderColor="darkgray" HorizontalTextAlignment="Center" TextColor="white"></Entry>
+                </pancake:PancakeView>
+                <pancake:PancakeView BackgroundColor="#333333" CornerRadius="50" HorizontalOptions="FillAndExpand" HeightRequest="50">
+                    <Entry Placeholder="confirme a senha" IsPassword="true" PlaceholderColor="DarkGray" HorizontalTextAlignment="Center" TextColor="white" IsEnabled="True"></Entry>
+                </pancake:PancakeView>
+                <Button Text="Registrar-se" BackgroundColor="#9BBB59" CornerRadius="25" Margin="0,50,0,0"></Button>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

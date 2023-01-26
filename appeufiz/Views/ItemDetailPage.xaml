@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             x:Class="appeufiz.Views.ItemDetailPage"
+             Title="{Binding Title}"
+             Background="#1A1A1A">
+
+    <Grid>
+        <StackLayout Spacing="20" Padding="15">
+            <Label Text="MEUS LEMBRETES" TextColor="White" HorizontalOptions="CenterAndExpand" FontSize="28"></Label>
+            <Label Text="NomeLocal" TextColor="#9BBB59" HorizontalOptions="CenterAndExpand" FontSize="20"></Label>
+        </StackLayout>
+        <StackLayout Spacing="20" Padding="15,130,0,15">
+
+            <pancake:PancakeView BackgroundColor="#333333" CornerRadius="50" HorizontalOptions="FillAndExpand" HeightRequest="50">
+                <Label x:Name="lblLembrete1" FontSize="Medium" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center"/>
+            </pancake:PancakeView>
+
+            <!--<Label Text="{Binding Nome}" FontSize="Small" TextColor="White" />
+            <Label Text="Description:" FontSize="Medium" TextColor="White" />
+            <Label Text="{Binding Description}" FontSize="Small" TextColor="White" />-->
+        </StackLayout>
+        <StackLayout Spacing="20" Padding="15,0,15,50" VerticalOptions="End">
+            <Button x:Name="btnSave" Clicked="btnNovo_Clicked" TextColor="White" Text="NOVO" BackgroundColor="#9BBB59" CornerRadius="25"></Button>
+        </StackLayout>
+    </Grid>
+
+</ContentPage>

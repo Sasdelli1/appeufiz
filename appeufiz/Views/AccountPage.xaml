@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="appeufiz.Views.AccountPage"
+             xmlns:vm="clr-namespace:appeufiz.ViewModels" xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             BackgroundColor="#1A1A1A">
+
+    <ContentPage.BindingContext>
+        <vm:AccountViewModel />
+    </ContentPage.BindingContext>
+
+
+    <ContentPage.Content>
+        <Grid Padding="15,0,15,0">
+            
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Start" Padding="0,5,0,30">
+                <Image Source="user_green.png" HeightRequest="50" WidthRequest="50" HorizontalOptions="Fill"></Image>
+            </StackLayout>
+            
+            <StackLayout Padding="0,50,0,0">
+                
+                <Label Text="Nome" TextColor="White" FontSize="18" Padding="15,30,0,0"/>
+                <pancake:PancakeView BackgroundColor="#333333" CornerRadius="50" HorizontalOptions="FillAndExpand" HeightRequest="45">
+                    <Entry x:Name="DBNome" HorizontalTextAlignment="Center" TextColor="white" IsEnabled="False"></Entry>
+                </pancake:PancakeView>
+
+                <Label Text="Usuário" TextColor="White" FontSize="18" Padding="15,20,0,0"/>
+                <pancake:PancakeView BackgroundColor="#333333" CornerRadius="50" HorizontalOptions="FillAndExpand" HeightRequest="45">
+                    <Entry x:Name="DBUsuario" HorizontalTextAlignment="Center" TextColor="white" IsEnabled="False"></Entry>
+                </pancake:PancakeView>                
+                
+                <Label Text="E-mail" TextColor="White" FontSize="18" Padding="15,20,0,0"/>
+                <pancake:PancakeView BackgroundColor="#333333" CornerRadius="50" HorizontalOptions="FillAndExpand" HeightRequest="45">
+                    <Entry x:Name="DBEmail" HorizontalTextAlignment="Center" TextColor="white" IsEnabled="False"></Entry>
+                </pancake:PancakeView>
+                                
+                <Label Text="Telefone" TextColor="White" FontSize="18" Padding="15,20,0,0"/>
+                <pancake:PancakeView BackgroundColor="#333333" CornerRadius="50" HorizontalOptions="FillAndExpand" HeightRequest="45">
+                    <Entry x:Name="DBTelefone" HorizontalTextAlignment="Center" TextColor="white" IsEnabled="False"></Entry>
+                </pancake:PancakeView>  
+
+                <Button x:Name="btnAltDados" Clicked="btnAltDados_Clicked" Text="Alterar dados" Margin="0,30,0,20" BackgroundColor="#333333" CornerRadius="25" ></Button>
+                <Button x:Name="btnAltSenha" Clicked="btnAltSenha_Clicked" Text="Alterar senha" Margin="0,0,0,0" BackgroundColor="#333333" CornerRadius="25" ></Button>
+                
+            </StackLayout>
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

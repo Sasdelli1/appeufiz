@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="appeufiz.Views.ConfigPage"
+             xmlns:vm="clr-namespace:appeufiz.ViewModels"
+             BackgroundColor="#1A1A1A">
+
+    <ContentPage.BindingContext>
+        <vm:ConfigViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+      <StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="0,30,0,50">
+                <Image Source="config_green.png" HeightRequest="40" WidthRequest="40" HorizontalOptions="Fill"></Image>
+                <Label Text="CONFIGURAÇÕES" TextColor="White" FontSize="28" HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical" Padding="40,0,30,24">
+                <Button x:Name="btnConta" Margin="0,0,0,15" Text="Minha conta"                         
+                        BackgroundColor="#333333"
+                        TextColor="White"
+                        CornerRadius = "25"
+                        Clicked="btnConta_Clicked"
+                        FontSize="16"/>
+                <Button x:Name="btnBackup" Margin="0,10,0,15" Text="Backup" 
+                        BackgroundColor="#333333"
+                        TextColor="White"
+                        CornerRadius = "25"
+                        Clicked="btnBackup_Clicked"
+                        FontSize="16"/>
+                <Button x:Name="btnLogout" Margin="0,10,0,15" Text="Logout" 
+                        BackgroundColor="#333333"
+                        TextColor="White"
+                        CornerRadius = "25"
+                        Clicked="btnLogout_Clicked"
+                        FontSize="16"/>
+            </StackLayout>
+        </StackLayout>
+  </ContentPage.Content>
+</ContentPage>
