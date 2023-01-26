@@ -8,7 +8,8 @@ namespace appeufiz.Data
     public class dbUser
     {
 
-        public void criar_user(        
+        public void criar_user(
+              String p_id,
               String p_nome 
             , String p_nome_usuario 
             , String p_email 
@@ -20,6 +21,12 @@ namespace appeufiz.Data
             //// comando insert
         
         
+        }
+
+        public void update_user(
+            String p_senha)
+        { 
+            //Comando update        
         }
 
         public Boolean Logon(string p_login, string p_senha)

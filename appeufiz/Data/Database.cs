@@ -162,7 +162,7 @@ namespace appeufiz.Data
                     /// Criar o Arquivo 
                     /// 
                     /// 
-                    SQLite
+                    SQLiteConnection.CreateFile(@"c:\dados\Lembretes.sqlite");
 
 
                     /// Criar Tabela
