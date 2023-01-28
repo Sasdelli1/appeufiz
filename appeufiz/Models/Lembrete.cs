@@ -7,7 +7,7 @@ namespace appeufiz.Models
 {
     public class Lembrete
     {
-        [PrimaryKey, AutoIncrement]
+      //  [PrimaryKey, AutoIncrement]
         public string Id { get; set; }
         public string Nome { get; set; }
     }

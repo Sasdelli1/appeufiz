@@ -14,8 +14,7 @@ namespace appeufiz.Services
         {
             items = new List<Item>()
             {
-                new Item { Id = Guid.NewGuid().ToString(), Nome = "Local1", Longitude="Teste de Longitude", Latitude = "Teste de Latitude"},
-                new Item { Id = Guid.NewGuid().ToString(), Nome = "Local2", Longitude="Teste de Longitude2", Latitude = "Teste de Latitude2"},
+
             };
         }
 

@@ -36,8 +36,6 @@ namespace appeufiz.Views
 
             dbUser dbuser = new dbUser();
 
-
-            //if (txtUsername.Text == "admin" && txtPassword.Text == "123")
             try
             {
                 if (dbuser.Logon(txtUsername.Text, txtPassword.Text))

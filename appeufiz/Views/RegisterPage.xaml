@@ -7,33 +7,29 @@
 
     <ContentPage.Content>
         <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
             <StackLayout>
                 <Image Source="newuser_green.png" HeightRequest="60" WidthRequest="60" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,30,0,0"></Image>
             </StackLayout>
             <StackLayout Padding="20,130,20,0">
                 <pancake:PancakeView BackgroundColor="#333333" CornerRadius="50" HorizontalOptions="FillAndExpand" HeightRequest="50">
-                    <Entry Placeholder="nome" PlaceholderColor="darkgray" HorizontalTextAlignment="Center" TextColor="white"></Entry>
+                    <Entry x:Name="nome" Placeholder="nome" PlaceholderColor="darkgray" HorizontalTextAlignment="Center" TextColor="white"></Entry>
                 </pancake:PancakeView>
                 <pancake:PancakeView BackgroundColor="#333333" CornerRadius="50" HorizontalOptions="FillAndExpand" HeightRequest="50">
-                    <Entry Placeholder="usuario" PlaceholderColor="darkgray" HorizontalTextAlignment="Center" TextColor="white"></Entry>
+                    <Entry x:Name="usuario" Placeholder="usuario" PlaceholderColor="darkgray" HorizontalTextAlignment="Center" TextColor="white"></Entry>
                 </pancake:PancakeView>
                 <pancake:PancakeView BackgroundColor="#333333" CornerRadius="50" HorizontalOptions="FillAndExpand" HeightRequest="50">
-                    <Entry Placeholder="e-mail" PlaceholderColor="darkgray" HorizontalTextAlignment="Center" TextColor="white" Keyboard="Email"></Entry>
+                    <Entry x:Name="email" Placeholder="e-mail" PlaceholderColor="darkgray" HorizontalTextAlignment="Center" TextColor="white" Keyboard="Email"></Entry>
                 </pancake:PancakeView>
                 <pancake:PancakeView BackgroundColor="#333333" CornerRadius="50" HorizontalOptions="FillAndExpand" HeightRequest="50">
-                    <Entry Placeholder="telefone" PlaceholderColor="darkgray" HorizontalTextAlignment="Center" TextColor="white" Keyboard="Telephone" MaxLength="11"></Entry>
+                    <Entry x:Name="telefone" Placeholder="telefone" PlaceholderColor="darkgray" HorizontalTextAlignment="Center" TextColor="white" Keyboard="Telephone" MaxLength="11"></Entry>
                 </pancake:PancakeView>
-                <pancake:PancakeView BackgroundColor="#333333" CornerRadius="50" HorizontalOptions="FillAndExpand" HeightRequest="50" Margin="0,50,0,0">
-                    <Entry Placeholder="senha" IsPassword="true" PlaceholderColor="darkgray" HorizontalTextAlignment="Center" TextColor="white"></Entry>
+                <pancake:PancakeView BackgroundColor="#333333" CornerRadius="50" HorizontalOptions="FillAndExpand" HeightRequest="50" Margin="0,30,0,0">
+                    <Entry x:Name="senha" Placeholder="senha" IsPassword="true" PlaceholderColor="darkgray" HorizontalTextAlignment="Center" TextColor="white"></Entry>
                 </pancake:PancakeView>
                 <pancake:PancakeView BackgroundColor="#333333" CornerRadius="50" HorizontalOptions="FillAndExpand" HeightRequest="50">
-                    <Entry Placeholder="confirme a senha" IsPassword="true" PlaceholderColor="DarkGray" HorizontalTextAlignment="Center" TextColor="white" IsEnabled="True"></Entry>
+                    <Entry x:Name="confSenha" Placeholder="confirme a senha" IsPassword="true" PlaceholderColor="DarkGray" HorizontalTextAlignment="Center" TextColor="white"></Entry>
                 </pancake:PancakeView>
-                <Button Text="Registrar-se" BackgroundColor="#9BBB59" CornerRadius="25" Margin="0,50,0,0"></Button>
+                <Button Text="Registrar-se" Clicked="RegisterUser" BackgroundColor="#9BBB59" CornerRadius="25" Margin="0,70,0,0"></Button>
             </StackLayout>
         </Grid>
     </ContentPage.Content>

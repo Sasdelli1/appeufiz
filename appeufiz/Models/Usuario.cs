@@ -7,7 +7,7 @@ namespace appeufiz.Models
 {
     public class Usuario
     {
-        [PrimaryKey, AutoIncrement]
+      //  [PrimaryKey, AutoIncrement]
         public string Id { get; set; }
         public string Nome { get; set; }
         public string NomeUsuario { get; set; }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using appeufiz.Models;
+using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,19 +8,23 @@ namespace appeufiz.Data
 {
     public class dbLocal
     {
-        public void criar_local(
-              String p_id,
-              String p_nome
-            , String p_logitude
-            , String p_latitude
-            )
+        string pasta = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+        string dbPath = "eufiz.db";
+
+        public void criar_local(Item olocal)
         {
-
-            //// comando insert
-
-
+            try
+            {
+                using (var conexao = new SQLiteConnection(System.IO.Path.Combine(pasta, "Alunos.db")))
+                {
+                    conexao.Insert(olocal);
+                }
+            }
+            catch (SQLiteException)
+            {
+                throw;
+            }
         }
-
         public void select_local(
             String p_id, 
             String p_nome,

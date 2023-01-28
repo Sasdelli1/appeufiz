@@ -1,7 +1,8 @@
-﻿using Microsoft.Data.Sqlite;
+﻿using appeufiz.Models;
 using SQLite;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 namespace appeufiz.Data
@@ -9,30 +10,16 @@ namespace appeufiz.Data
     public class dbLembrete
     {
 
+        string dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal),
+        "eufiz.db3");
+
+
         public void criar_lembrete(
               String p_id,
               String p_nome
             )
         {
-            int Criado;
 
-            //// comando insert
-            try
-            {
-
-                
-                var connection = new SqliteConnection("Data Source=" + dbPath);
-                connection.Open();
-                SQLiteCommand cmd = new SQLiteCommand($"INSERT INTO lembrete (nome, id)" +
-                                                $" VALUES('{p_nome}', '{p_id}')", connection);
-                Criado = cmd.ExecuteNonQuery();
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-            return; 
 
         }
 
