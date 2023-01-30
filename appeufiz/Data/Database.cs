@@ -33,7 +33,7 @@ namespace appeufiz.Data
         /// <param name="senha">Senha</param>
         /// <returns>Objeto POC do usuarios carregado com os dados do usuarios com OK e quando 
         /// Nao localizado mensagem que o usuario nao foi identificado e Status = false </returns>
-        public Usuario local(string login, string senha)
+        public Usuario login(string login, string senha)
         {
             Usuario usuario = new Usuario();
             usuario.Status = false;
@@ -79,22 +79,7 @@ namespace appeufiz.Data
                 using (var conexao = new SQLiteConnection(System.IO.Path.Combine(pasta, dbPath)))
                 {
 
-                    List<Item> olocal = conexao.Table<Item>().ToList();
-
-                    //   conexao.Query<Usuario>($" select * from usuario " +
-                    //                          $" where nome_usuario = '{login.ToUpper()}'" +
-                    //                          $" and senha = '{senha}' ").ToList();
-
-                    foreach (Usuario item in olocal)
-                    {
-                        if (item.NomeUsuario.ToUpper() == olocal.ToUpper())
-                        {
-                            if (item.Senha.ToUpper() == senha)
-                            {
-                                olocal = item;
-                            }
-                        }
-                    }
+                    List<Item> items = conexao.Table<Item>().ToList();
                 }
             }
             catch (Exception)
@@ -106,39 +91,31 @@ namespace appeufiz.Data
 
         }
 
-        public Lembrete listar(string nome)
+        public Lembrete lembrete(string nome)
         {
-            Lembrete listar = new Lembrete();
+            Lembrete olembrete = new Lembrete();
 
+            try
+            {
+                using (var conexao = new SQLiteConnection(System.IO.Path.Combine(pasta, dbPath)))
+                {
 
+                    List<Lembrete> lembretes = conexao.Table<Lembrete>().ToList();
 
+                }
+            }
+            catch (Exception)
+            {
 
-            return listar;
+                throw;
+            }
+            return olembrete;
 
         }
 
-        public Item listar_locais(string nome, string latitude, string longitude)
-        {
-            Item listar_locais = new Item();
 
 
 
-
-            return listar_locais;
-
-        }
-
-
-
-
-
-
-        public void QueryDatabase(string Comando)
-        {
-
-
-
-        }
 
         public Boolean ValidEufiz()
         {
@@ -192,7 +169,6 @@ namespace appeufiz.Data
             return Msg;
 
         }
-
 
     }
 }

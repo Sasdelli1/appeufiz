@@ -22,47 +22,5 @@ namespace appeufiz.Views
 
         }
 
-        [QueryProperty(nameof(Models.Lembrete), nameof(Models.Lembrete))]
-        public partial class LembreteDetailPage : ContentPage
-        {
-            public string Lembrete
-            {
-                set
-                {
-          //          LoadLembrete(value);
-                }
-            }
-
-            public LembreteDetailPage()
-            {
-//                InitializeComponent();
-
-                // Set the BindingContext of the page to a new Note.
-                BindingContext = new Lembrete();
-            }
-        
-
-            async void OnSaveButtonClicked(object sender, EventArgs e)
-            {
-                var note = (Lembrete)BindingContext;
-              //  note.Date = DateTime.Now;
-                if (!string.IsNullOrWhiteSpace(note.Nome))
-                {
-                //    await App.Database.SaveLembreteAsync(note);
-                }
-
-                // Navigate backwards
-                await Shell.Current.GoToAsync("..");
-            }
-
-            async void OnDeleteButtonClicked(object sender, EventArgs e)
-            {
-                var note = (Lembrete)BindingContext;
-               // await App.Database.DeleteLembreteAsync(note);
-
-                // Navigate backwards
-                await Shell.Current.GoToAsync("..");
-            }
-        }
     }
 }

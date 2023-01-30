@@ -21,11 +21,11 @@
                         BackgroundColor="#333333"/>
                 <maps:Map x:Name="myMap" IsShowingUser="True"/>
                 <pancake:PancakeView BackgroundColor="#333333" CornerRadius="50" HorizontalOptions="FillAndExpand" HeightRequest="50">
-                    <Entry Placeholder="nome do local" PlaceholderColor="DarkGray" Text="{Binding Text, Mode=TwoWay}" FontSize="Medium" TextColor="White" HorizontalTextAlignment="Center"/>
+                    <Entry x:Name="nome" Placeholder="nome do local" PlaceholderColor="DarkGray" Text="{Binding Text, Mode=TwoWay}" FontSize="Medium" TextColor="White" HorizontalTextAlignment="Center"/>
                 </pancake:PancakeView>
                 <StackLayout Orientation="Horizontal" Padding="0,0,30,0">
                     <Button Text="Cancelar" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
-                    <Button Text="Salvar" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand" BackgroundColor="#9BBB59"></Button>
+                    <Button Text="Salvar" Command="RegisterLocal" HorizontalOptions="FillAndExpand" BackgroundColor="#9BBB59"></Button>
                 </StackLayout>
             </StackLayout>
             

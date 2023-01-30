@@ -4,43 +4,31 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using Xamarin.Essentials;
 
 namespace appeufiz.Data
 {
     public class dbLembrete
     {
 
-        string dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal),
-        "eufiz.db3");
+        string pasta = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+        string dbPath = "eufiz.db";
 
 
-        public void criar_lembrete(
-              String p_id,
-              String p_nome
-            )
+        public void criar_lembrete(Lembrete olembrete)
         {
-
-
-        }
-
-        public void select_lembrete(
-            String p_nome)
-        { 
-            //Select banco
-        }
-
-        public void deletar_lembrete(
-            String p_nome)
-        { 
-        
-            //Comando delete
-        }
-
-        public void update_lembrete(
-            String p_id)
-        { 
-            //Comando update
-            
+            try
+            {
+                using (var conexao = new SQLiteConnection(System.IO.Path.Combine(pasta, "Alunos.db")))
+                {
+                    conexao.Insert(olembrete);
+                }
+            }
+            catch (SQLiteException)
+            {
+                throw;
+            }
         }
     }
+
 }

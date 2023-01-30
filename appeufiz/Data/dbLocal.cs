@@ -25,23 +25,5 @@ namespace appeufiz.Data
                 throw;
             }
         }
-        public void select_local(
-            String p_id, 
-            String p_nome,
-            String p_longitude,
-            String p_latitude)
-        { 
-            //Select banco
-        }
-
-
-        public void delete_local(
-            String p_id,
-            String p_nome,
-            String p_longitude,
-            String p_latitude)
-        {
-            //Delete locais
-        }  
     }
 }

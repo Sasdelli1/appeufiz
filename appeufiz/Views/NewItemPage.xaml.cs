@@ -1,5 +1,7 @@
-﻿using appeufiz.Models;
+﻿using appeufiz.Data;
+using appeufiz.Models;
 using appeufiz.ViewModels;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +17,8 @@ namespace appeufiz.Views
 {
     public partial class NewItemPage : ContentPage
     {
+        string pasta = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+        string dbPath = "eufiz.db";
         public Item Item { get; set; }
 
         public NewItemPage()
@@ -23,6 +27,39 @@ namespace appeufiz.Views
             BindingContext = new NewItemViewModel();
             gettinglocaldevice();
 
+
+        }
+
+        async protected void Register()
+        {
+
+            Item olocal = new Item();
+
+            olocal.Id = Guid.NewGuid().ToString();
+            olocal.Nome = nome.Text;
+            olocal.Latitude = resultLocation.Text;
+            olocal.Longitude = resultLocation.Text;
+
+            using (var conexao = new SQLiteConnection(System.IO.Path.Combine(pasta, dbPath)))
+            {
+                conexao.Insert(olocal);
+            }
+
+            await DisplayAlert("", "Local salvo com sucesso", "Ok");
+            await Shell.Current.GoToAsync("//NewItemPage");
+        }
+
+        private void RegisterLocal(object sender, EventArgs e)
+        {
+
+            if (Nome)
+            {
+                Register();
+            }
+            else
+            {
+                DisplayAlert("Ops...", "Falha ao salvar o local", "Tentar novamente");
+            }
 
         }
 
