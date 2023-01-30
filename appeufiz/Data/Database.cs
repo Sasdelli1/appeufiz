@@ -81,7 +81,10 @@ namespace appeufiz.Data
 
                     List<Item> items = conexao.Table<Item>().ToList();
                 }
+
             }
+
+
             catch (Exception)
             {
 
@@ -90,6 +93,9 @@ namespace appeufiz.Data
             return olocal;
 
         }
+
+
+
 
         public Lembrete lembrete(string nome)
         {

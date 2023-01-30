@@ -30,7 +30,7 @@ namespace appeufiz.Views
 
         }
 
-        async protected void Register()
+        async protected void RegisterLocal()
         {
 
             Item olocal = new Item();
@@ -45,23 +45,12 @@ namespace appeufiz.Views
                 conexao.Insert(olocal);
             }
 
+
             await DisplayAlert("", "Local salvo com sucesso", "Ok");
             await Shell.Current.GoToAsync("//NewItemPage");
         }
 
-        private void RegisterLocal(object sender, EventArgs e)
-        {
 
-            if (Nome)
-            {
-                Register();
-            }
-            else
-            {
-                DisplayAlert("Ops...", "Falha ao salvar o local", "Tentar novamente");
-            }
-
-        }
 
         private readonly Geocoder _geocoder = new Geocoder();
 

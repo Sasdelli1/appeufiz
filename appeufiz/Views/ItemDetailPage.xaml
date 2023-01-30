@@ -22,6 +22,7 @@
         </StackLayout>
         <StackLayout Spacing="20" Padding="15,0,15,50" VerticalOptions="End">
             <Button x:Name="btnSave" Clicked="btnNovo_Clicked" TextColor="White" Text="NOVO" BackgroundColor="#9BBB59" CornerRadius="25"></Button>
+            <Button x:Name="nome" Clicked="RegisterLembrete" TextColor="White" Text="SALVAR" BackgroundColor="#9BBB59" CornerRadius="25"></Button>
         </StackLayout>
     </Grid>
 
