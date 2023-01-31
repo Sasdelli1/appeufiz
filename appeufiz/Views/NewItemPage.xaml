@@ -15,7 +15,8 @@
             
             <StackLayout Spacing="3">
                 <Entry x:Name="entry" Margin="15,70,0,15" Placeholder="Digite o endereço" PlaceholderColor="Gray" TextColor="white" HorizontalTextAlignment="Center"/>
-                <Label x:Name="resultLocation" TextColor="white"/>
+                <Label x:Name="resultLocationLat" TextColor="white"/>
+                <Label x:Name="resultLocationLon" TextColor="white"/>
                 <Button x:Name="Pesquisaendereco" Margin="15,0,0,15" Text="Pesquisar" CornerRadius="25"
                         Clicked="Pesquisaendereco_Clicked"
                         BackgroundColor="#333333"/>
@@ -23,9 +24,8 @@
                 <pancake:PancakeView BackgroundColor="#333333" CornerRadius="50" HorizontalOptions="FillAndExpand" HeightRequest="50">
                     <Entry x:Name="nome" Placeholder="nome do local" PlaceholderColor="DarkGray" Text="{Binding Text, Mode=TwoWay}" FontSize="Medium" TextColor="White" HorizontalTextAlignment="Center"/>
                 </pancake:PancakeView>
-                <StackLayout Orientation="Horizontal" Padding="0,0,30,0">
-                    <Button Text="Cancelar" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
-                    <Button Text="Salvar" Command="RegisterLocal" HorizontalOptions="FillAndExpand" BackgroundColor="#9BBB59"></Button>
+                <StackLayout Orientation="Horizontal" Padding="0,0,0,30">
+                    <Button x:Name="btnRegisterLocal" Text="Salvar" Clicked="btnRegisterLocal_Clicked" HorizontalOptions="FillAndExpand" BackgroundColor="#9BBB59" CornerRadius="25"></Button>
                 </StackLayout>
             </StackLayout>
             

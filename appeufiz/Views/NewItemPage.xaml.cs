@@ -26,28 +26,29 @@ namespace appeufiz.Views
             InitializeComponent();
             BindingContext = new NewItemViewModel();
             gettinglocaldevice();
-
-
+        }
+        private void btnRegisterLocal_Clicked(object sender, EventArgs e)
+        {
+            RegisterLocal();
         }
 
         async protected void RegisterLocal()
         {
-
+           // dbLocal odbLocal = new dbLocal();
             Item olocal = new Item();
 
             olocal.Id = Guid.NewGuid().ToString();
             olocal.Nome = nome.Text;
-            olocal.Latitude = resultLocation.Text;
-            olocal.Longitude = resultLocation.Text;
+            olocal.Latitude = resultLocationLat.Text;
+            olocal.Longitude = resultLocationLon.Text;
 
             using (var conexao = new SQLiteConnection(System.IO.Path.Combine(pasta, dbPath)))
             {
                 conexao.Insert(olocal);
             }
 
-
-            await DisplayAlert("", "Local salvo com sucesso", "Ok");
-            await Shell.Current.GoToAsync("//NewItemPage");
+            await DisplayAlert("", "Local salvo com sucesso!", "Ok");
+            await Shell.Current.GoToAsync("//main");
         }
 
 
@@ -64,7 +65,8 @@ namespace appeufiz.Views
 
 
                 if (result.Any())
-                    resultLocation.Text = $"lat: {result.FirstOrDefault()?.Latitude}, long: {result.FirstOrDefault()?.Longitude}";
+                    resultLocationLat.Text = $"{result.FirstOrDefault()?.Latitude}";
+                    resultLocationLon.Text = $"{result.FirstOrDefault()?.Longitude}";
 
                 myMap.MoveToRegion(MapSpan.FromCenterAndRadius(positions.First(), Distance.FromMeters(1)));
 
@@ -108,7 +110,8 @@ namespace appeufiz.Views
 
 
                 if (result.Any())
-                    resultLocation.Text = $"lat: {result.FirstOrDefault()?.Latitude}, long: {result.FirstOrDefault()?.Longitude}";
+                    resultLocationLat.Text = $"{result.FirstOrDefault()?.Latitude}";
+                    resultLocationLon.Text = $"{result.FirstOrDefault()?.Longitude}";
 
                 myMap.MoveToRegion(MapSpan.FromCenterAndRadius(positions.First(), Distance.FromMeters(1)));
 

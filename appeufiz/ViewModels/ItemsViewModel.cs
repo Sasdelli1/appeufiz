@@ -1,6 +1,8 @@
 ﻿using appeufiz.Models;
 using appeufiz.Views;
+using SQLite;
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
@@ -11,6 +13,9 @@ namespace appeufiz.ViewModels
     public class ItemsViewModel : BaseViewModel
     {
         private Item _selectedItem;
+
+        public string pasta = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+        public string dbPath = "eufiz.db";
 
         public ObservableCollection<Item> Items { get; }
         public Command LoadItemsCommand { get; }
@@ -36,10 +41,20 @@ namespace appeufiz.ViewModels
             {
                 Items.Clear();
                 var items = await DataStore.GetItemsAsync(true);
-                foreach (var item in items)
+
+                /// pesquisar aqui 
+                /// {
+                using (var conexao = new SQLiteConnection(System.IO.Path.Combine(pasta, dbPath)))
                 {
-                    Items.Add(item);
+                    List<Item> Xitems = conexao.Table<Item>().ToList();
+                    foreach (Item item in Xitems)
+                    {
+                        Items.Add(item);
+                    }
                 }
+                items = Items;
+
+                
             }
             catch (Exception ex)
             {

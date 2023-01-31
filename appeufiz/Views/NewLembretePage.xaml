@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="appeufiz.Views.NewLembretePage"             
+             xmlns:vm="clr-namespace:appeufiz.ViewModels" xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             BackgroundColor="#1A1A1A">
+
+    <ContentPage.BindingContext>
+        <vm:NewLembreteViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <Grid>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Start" Padding="0,5,0,30">
+                <Label Padding="15,0,0,0" Text="NOVO LEMBRETE" TextColor="White" FontSize="30" HorizontalOptions="FillAndExpand"/>
+                <pancake:PancakeView BackgroundColor="#333333" CornerRadius="50" HorizontalOptions="FillAndExpand" HeightRequest="50">
+                    <Entry x:Name="entryLembrete" Placeholder="Digite o lembrete" PlaceholderColor="DarkGray" TextColor="White"></Entry>
+                </pancake:PancakeView>
+                <Label Text="Escolha quando deseja ser lembrado:" TextColor="White"></Label>
+                <RadioButton x:Name="rdChegar" Content="Chegar"></RadioButton>
+                <RadioButton x:Name="rdSair" Content="Sair"></RadioButton>
+                <StackLayout Spacing="20" Padding="15,0,15,50" VerticalOptions="End">
+                    <Button x:Name="btnSalvar" Clicked="btnSalvar_Clicked" TextColor="White" Text="SALVAR" BackgroundColor="#9BBB59" CornerRadius="25"></Button>
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

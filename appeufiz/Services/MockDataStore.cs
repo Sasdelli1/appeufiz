@@ -1,4 +1,5 @@
 ﻿using appeufiz.Models;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +11,19 @@ namespace appeufiz.Services
     {
         readonly List<Item> items;
 
+        string pasta = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+        string dbPath = "eufiz.db";
         public MockDataStore()
         {
-            items = new List<Item>()
-            {
 
+            items = new List<Item>();
+            using (var conexao = new SQLiteConnection(System.IO.Path.Combine(pasta, dbPath)))
+            {
+                List<Item> Xitems = conexao.Table<Item>().ToList();
+                foreach (Item item in Xitems)
+                {
+                    items.Add(item);
+                }
             };
         }
 

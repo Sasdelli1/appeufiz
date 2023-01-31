@@ -21,6 +21,7 @@ namespace appeufiz
             Routing.RegisterRoute(nameof(RegisterPage), typeof(RegisterPage));
             Routing.RegisterRoute(nameof(PasswordPage), typeof(PasswordPage));
             Routing.RegisterRoute(nameof(CalendarPage), typeof(CalendarPage));
+            Routing.RegisterRoute(nameof(NewLembretePage), typeof(NewLembretePage));
         }
 
     }

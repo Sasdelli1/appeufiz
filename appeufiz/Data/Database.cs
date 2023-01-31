@@ -94,9 +94,6 @@ namespace appeufiz.Data
 
         }
 
-
-
-
         public Lembrete lembrete(string nome)
         {
             Lembrete olembrete = new Lembrete();
@@ -110,9 +107,9 @@ namespace appeufiz.Data
 
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                string msg = ex.Message;
                 throw;
             }
             return olembrete;
